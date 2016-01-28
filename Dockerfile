@@ -8,7 +8,7 @@ ADD sources.list.deepin /etc/apt/sources.list
 RUN apt-get update \
     && yes | apt-get install g++ \
     && yes | apt-get install clang \
-    && yes | apt-get install distcc
+    && yes | apt-get install distcc=3.1-*
 
 COPY source/start.sh /usr/bin/
 
