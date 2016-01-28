@@ -3,7 +3,8 @@ MAINTAINER choldrim <choldrim@foxmail.com>
 
 LABEL description="distcc compiler node"
 
-ADD sources.list.deepin /etc/apt/sources.list
+# test source
+#ADD sources.list.deepin /etc/apt/sources.list
 
 RUN apt-get update \
     && yes | apt-get install g++ \
