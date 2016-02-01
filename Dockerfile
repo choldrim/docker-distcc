@@ -12,6 +12,10 @@ RUN apt-get update \
     && yes | apt-get install distcc=3.1-* \
     && apt-get clean && apt -get instore distcc
 
+RUN apt-get clean \
+    && rm -rf /var/lib/apt/lists
+
 COPY source/start.sh /usr/bin/
 
 ENTRYPOINT ["start.sh"]
+
