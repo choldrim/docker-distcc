@@ -1,5 +1,5 @@
 build:
-	docker build -t choldrim/distcc --force-rm=true .
+	docker build -t hub.deepin.io/distcc --force-rm=true .
 
 run:
 	docker-compose up -d
