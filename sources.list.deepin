@@ -1,3 +1,0 @@
-#deb [by-hash=force] http://pools.corp.deepin.com/deepin unstable main contrib non-free
-deb [by-hash=force] http://packages.deepin.com/deepin unstable main contrib non-free
-deb-src http://packages.deepin.com/deepin unstable main contrib non-free
