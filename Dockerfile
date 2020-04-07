@@ -1,16 +1,17 @@
-FROM hub.deepin.io/debian:jessie
+FROM debian:buster
+LABEL maintainer="Max Kratz <account@maxkratz.com>"
+ENV DEBIAN_FRONTEND=noninteractive
 
-MAINTAINER choldrim <choldrim@foxmail.com>
+RUN apt-get update -q && \
+    apt-get upgrade -yq
 
-ADD http://mirrors.163.com/.help/sources.list.jessie /etc/apt/sources.list
+RUN apt-get install -y --no-install-recommends --no-install-suggests g++ clang distcc
+RUN apt-get clean  -y
 
-ARG DEBIAN_FRONTEND=noninteractive
-RUN apt-get update \
-    && yes | apt-get install --no-install-recommends --no-install-suggests g++ clang distcc \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists
+# Remove apt lists (for storage efficiency)
+RUN rm -rf /var/lib/apt/lists/*
 
-COPY entrypoint.sh /entrypiont.sh
+COPY entrypoint.sh /entrypoint.sh
 
 EXPOSE 3632
-ENTRYPOINT ["/entrypiont.sh"]
+ENTRYPOINT ["/entrypoint.sh"]
