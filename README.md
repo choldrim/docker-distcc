@@ -1,4 +1,7 @@
 # docker-distcc
+
+[![Build Status](https://github.ci.maxkratz.com/api/badges/maxkratz/docker-distcc/status.svg)](https://github.ci.maxkratz.com/maxkratz/docker-distcc)
+
 distcc image
 based on:
 debian 10 (buster),
